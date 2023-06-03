@@ -31,3 +31,7 @@ const server = http.createServer((request,response)=>{
 server.listen(8080,()=>{
     console.log("El servidor prendio")
 })
+
+
+// Tarea 1:terminar todos los metodos de CRUD con la ruta /hola y /adios
+// Tarea 2 : cambiar los if´s con estructura de datos
