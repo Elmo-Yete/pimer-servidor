@@ -17,15 +17,15 @@ const routes = {
     }
 };
 
-const newServer = http.createServer((request,response) => {
-    const {url,method}= request;
+const newServer = http.createServer((request, response) => {
+    const { url, method } = request;
     if (routes[url] && routes[url][method]) {
-        response.write(routes[url][method]);
-    }else {
-        response.write("no existe el nodo al que quieres acceder")
+      response.write(routes[url][method]);
+    } else {
+      response.write("Ruta no encontrada");
     }
-    response.end
-})
+    response.end();
+  });
 
 // const server = http.createServer((request,response)=>{
 
@@ -45,7 +45,7 @@ const newServer = http.createServer((request,response) => {
 //     if (method === "DELETE" && url === "/hola") {
 //         response.write("Estamos borrando en hola")
 //     }
-    
+
 //     if (method === "GET" && url === "/adios") {
 //         response.write("Estamos en el endpoint de adios")
 //     }
@@ -61,7 +61,7 @@ const newServer = http.createServer((request,response) => {
 //     if (method === "DELETE" && url === "/adios") {
 //         response.write("Estamos borrando en adios")
 //     }
-    
+
 //     // responder las request
 //     // response.write("Este es mi primer servidor");
 //     response.end()
@@ -69,6 +69,7 @@ const newServer = http.createServer((request,response) => {
 
 
 //prender el servidor 
+
 newServer.listen(8080,()=>{
     console.log("El servidor prendio")
 })
